@@ -7,7 +7,7 @@ echo "===== Démarrage de la surveillance Admin_API à $(date) =====" >> "$LOGFI
 while true; do
     DATE=$(date "+%Y-%m-%d %H:%M:%S")
     # Cherche les processus contenant Admin_API
-    MATCHES=$(ps aux | grep "Admin_API")
+    MATCHES=$(ps aux | grep -i "Admin_API")
 
     if [[ ! -z "$MATCHES" ]]; then
         echo "[$DATE] Détection de processus Admin_API :" >> "$LOGFILE"
